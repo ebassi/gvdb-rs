@@ -1,0 +1,26 @@
+[package]
+name = "gvdb-sys"
+description = "Raw GVDB bindings for Rust, used internally by gvdb-rs"
+version = "0.1.0"
+authors = ["Emmanuele Bassi <ebassi@gnome.org>"]
+repository = "https://github.com/ebassi/gvdb-rs"
+license = "LGPLv2.1+"
+build = "build.rs"
+links = "gvdb"
+
+[lib]
+name = "gvdb_sys"
+
+[build-dependencies]
+pkg-config = "0.3.7"
+gcc = "0.3.0"
+
+[dependencies]
+libc = "0.2"
+
+[dependencies.glib-sys]
+version = "0.4.0"
+git = "https://github.com/gtk-rs/sys"
+
+[features]
+default = []
