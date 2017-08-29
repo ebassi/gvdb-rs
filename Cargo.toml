@@ -15,11 +15,14 @@ path = "src/lib.rs"
 
 [dependencies]
 libc = "0.1"
-glib = "0.3.0"
 
 [dependencies.gvdb-sys]
 path = "gvdb-sys"
 version = "0.1.0"
+
+[dependencies.glib]
+version = "0.3.0"
+git = "https://github.com/gtk-rs/glib"
 
 [features]
 default = []
