@@ -18,6 +18,7 @@ use std::path::{PathBuf, Path};
 use std::ptr;
 
 use glib::translate::*;
+use glib_sys;
 use gvdb_sys;
 use Error;
 use Variant;
@@ -65,6 +66,9 @@ impl Builder {
                                                 filename.as_ref().to_glib_none().0,
                                                 self.byteswap.to_glib(),
                                                 &mut error);
+
+            glib_sys::g_hash_table_unref(ht);
+
             if error.is_null() {
                 Ok(())
             }

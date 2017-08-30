@@ -20,6 +20,10 @@ libc = "0.1"
 path = "gvdb-sys"
 version = "0.1.0"
 
+[dependencies.glib-sys]
+version = "0.4.0"
+git = "https://github.com/gtk-rs/sys"
+
 [dependencies.glib]
 version = "0.3.0"
 git = "https://github.com/gtk-rs/glib"

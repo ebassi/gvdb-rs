@@ -14,6 +14,7 @@
 
 extern crate libc;
 extern crate glib;
+extern crate glib_sys;
 extern crate gvdb_sys;
 
 use std::ffi::CStr;
