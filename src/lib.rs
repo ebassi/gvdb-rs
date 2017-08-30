@@ -17,13 +17,5 @@ extern crate glib;
 extern crate glib_sys;
 extern crate gvdb_sys;
 
-use std::ffi::CStr;
-
-use glib::{
-    Bytes,
-    Error,
-    Variant,
-};
-
 pub mod builder;
 pub use builder::Builder;
