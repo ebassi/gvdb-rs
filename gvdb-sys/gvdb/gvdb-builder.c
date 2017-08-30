@@ -502,6 +502,25 @@ file_builder_serialise (FileBuilder          *fb,
   return result;
 }
 
+GBytes *
+gvdb_table_write_bytes (GHashTable  *table,
+                        gboolean     byteswap)
+{
+  struct gvdb_pointer root;
+  FileBuilder *fb;
+  GString *str;
+  GBytes *retval;
+
+  fb = file_builder_new (byteswap);
+  file_builder_add_hash (fb, table, &root);
+  str = file_builder_serialise (fb, root);
+
+  retval = g_bytes_new_take (str->str, str->len);
+  g_string_free (str, FALSE);
+
+  return retval;
+}
+
 gboolean
 gvdb_table_write_contents (GHashTable   *table,
                            const gchar  *filename,

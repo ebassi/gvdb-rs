@@ -53,5 +53,8 @@ gboolean                gvdb_table_write_contents                       (GHashTa
                                                                          const gchar    *filename,
                                                                          gboolean        byteswap,
                                                                          GError        **error);
+G_GNUC_INTERNAL
+GBytes *                gvdb_table_write_bytes                          (GHashTable     *table,
+                                                                         gboolean        byteswap);
 
 #endif /* __gvdb_builder_h__ */

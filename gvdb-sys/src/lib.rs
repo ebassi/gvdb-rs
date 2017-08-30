@@ -32,5 +32,6 @@ extern "C" {
     pub fn gvdb_table_list(table: *mut GvdbTable) -> *mut *mut c_char;
     pub fn gvdb_table_new(filename: *const c_char, trusted: gboolean, error: *mut *mut GError) -> *mut GvdbTable;
     pub fn gvdb_table_new_from_bytes(bytes: *mut GBytes, trusted: gboolean, error: *mut *mut GError) -> *mut GvdbTable;
+    pub fn gvdb_table_write_bytes(table: *mut GHashTable, byteswap: gboolean) -> *mut GBytes;
     pub fn gvdb_table_write_contents(table: *mut GHashTable, filename: *const c_char, byteswap: gboolean, error: *mut *mut GError) -> gboolean;
 }
