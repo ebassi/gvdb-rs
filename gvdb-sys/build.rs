@@ -16,5 +16,5 @@ fn main() {
     builder.include("src");
     builder.file("gvdb/gvdb-builder.c");
     builder.file("gvdb/gvdb-reader.c");
-    builder.compile("libgvdb.a");
+    builder.compile("gvdb");
 }
