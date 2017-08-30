@@ -182,10 +182,10 @@ mod tests {
     #[test]
     fn build_file() {
         let db_path = Path::new("test-builder.db");
-        Builder::new()
-                .item("hello", glib::Variant::from("world"))
-                .write_to_file(db_path);
+        let _ = Builder::new()
+                        .item("hello", glib::Variant::from("world"))
+                        .write_to_file(db_path);
         assert_eq!(db_path.exists(), true);
-        fs::remove_file(db_path);
+        fs::remove_file(db_path).unwrap();
     }
 }
